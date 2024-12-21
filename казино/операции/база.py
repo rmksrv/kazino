@@ -1,11 +1,16 @@
+import abc as абц
+
 from типы import Стэк, ТаблицаИмен, КонстПул
 
 
-class Оп:
+class Оп(абц.ABC):
 
-    def исполнить(сам, стэк: Стэк, таблица_имен: ТаблицаИмен, конст_пул: КонстПул):
-        raise NotImplemented
+    @абц.abstractmethod
+    def исполнить(сам, стэк: Стэк, таблица_имен: ТаблицаИмен, конст_пул: КонстПул): ...
 
-    def компилировать(сам) -> bytes:
-        raise NotImplemented
+    @абц.abstractmethod
+    def компилировать(сам) -> bytes: ...
+
+    def __repr__(сам) -> str:
+        return f"{сам.__class__.__name__}{vars(сам)}"
 
