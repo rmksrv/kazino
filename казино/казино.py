@@ -70,10 +70,17 @@ def выйти_с_ошибкой(текст: str, код_выхода: int = -1)
 
 def парсить_аргументы() -> аргпарс.Namespace:
     парсер = аргпарс.ArgumentParser(prog="казино")
-    парсер.add_argument("команда", choices=["комп", "интер"])
+    субпарсеры = парсер.add_subparsers(dest="команда")
+
+    парсер_комп = субпарсеры.add_parser("комп")
+    парсер_комп.add_argument("--пуск", action="store_true", default=False)
+    парсер_комп.add_argument("--выходной-файл", type=str, default="./out.pyc")
+
+    парсер_интер = субпарсеры.add_parser("интер")
+    парсер_интер.add_argument("--допвывод", action="store_true", default=False)
+
     парсер.add_argument("файл", type=str)
-    парсер.add_argument("--пуск", action="store_true", default=False)
-    парсер.add_argument("--допвывод", action="store_true", default=False)
+
     return парсер.parse_args()
 
 
@@ -113,7 +120,7 @@ if __name__ == "__main__":
     if not файл.exists():
         выйти_с_ошибкой(f"Файл {файл} не найден")
     match аргументы.команда:
-        case "комп": компилировать(прог, путьбиб.Path("./test.pyc"), пуск=аргументы.пуск)
+        case "комп": компилировать(прог, путьбиб.Path(аргументы.выходной_файл), пуск=аргументы.пуск)
         case "интер": интерпретировать(прог, допвывод=аргументы.допвывод)
         case _: выйти_с_ошибкой(f"Неизвестная команда `{аргументы.команда}`")
 
