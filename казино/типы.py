@@ -1,4 +1,5 @@
 import typing as т
+from утилиты import Одиночка
 
 type ПроизвКортеж[Т] = tuple[Т, ...]
 type Список[T] = list[T]
@@ -12,15 +13,7 @@ type КонстПул = ПроизвКортеж[СтдТипы]
 Ничего = None
 Мб = т.Optional
 
-class Нуль:
+class Нуль(metaclass=Одиночка):
 
-    _экз = Ничего
-
-    def __call__(сам):
-        if сам._экз is Ничего:
-            сам._экз = Нуль()
-        return сам._экз
-
-    def __repr__(сам) -> str:
-        return "NULL"
+    def __repr__(сам) -> str:  return "NULL"
 
