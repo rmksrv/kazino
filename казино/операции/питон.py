@@ -1,4 +1,5 @@
 import operator as оператор
+from pprint import pprint
 
 from операции.база import Оп
 from константы import ПИТОН_ОПКОДЫ, КОДЫ_ДВОИЧН_ОП
@@ -130,8 +131,7 @@ class Вызвать(Оп):
         if объект is Нуль():
             результат = вызываемое(*аргументы)
         else:
-            # TODO: реализовать вызов методов
-            raise NotImplementedError
+            результат = вызываемое(объект, *аргументы)
         стэк.append(результат)
 
     def компилировать(сам) -> bytes:

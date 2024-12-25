@@ -1,7 +1,7 @@
 from functools import partial as частичн
 from dataclasses import dataclass as _классданных
 
-from типы import СтдТипы, Мб, Ничего
+from типы import СтдТипы, ТаблицаИмен, КонстПул
 from утилиты import йота
 
 классданных = частичн(_классданных, frozen=True, slots=True)()
@@ -28,6 +28,13 @@ class ПромежутТаблицаИмен(dict):
             сам[имя] = ДанныеИмени(йота(сам.ид), знач)
         return сам[имя]
 
+    def как_стд_таблица_имен(сам) -> ТаблицаИмен:
+        return {
+            данные.ид: (имя, данные.знач)
+            for имя, данные in сам.items()
+        }
+
+
 
 class ТаблицаКонст(dict):
 
@@ -43,4 +50,7 @@ class ТаблицаКонст(dict):
         if знач not in сам:
             сам[знач] = йота(сам.ид)
         return сам[знач]
+
+    def как_констпул(сам) -> КонстПул:
+        return tuple(знач for знач in sorted(сам, key=сам.get))
 
