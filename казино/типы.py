@@ -3,6 +3,7 @@ from утилиты import Одиночка
 
 type ПроизвКортеж[Т] = tuple[Т, ...]
 type Список[T] = list[T]
+type Набор[T] = set[T]
 type Словарь[K, V] = dict[K, V]
 type СтдТипы = str | int | float | bool | None
 type Вызывабельное = т.Callable
@@ -14,6 +15,5 @@ type КонстПул = ПроизвКортеж[СтдТипы]
 Мб = т.Optional
 
 class Нуль(metaclass=Одиночка):
-
     def __repr__(сам) -> str:  return "NULL"
 
