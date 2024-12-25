@@ -1,9 +1,8 @@
 import operator as оператор
-from pprint import pprint
 
-from операции.база import Оп
-from константы import ПИТОН_ОПКОДЫ, КОДЫ_ДВОИЧН_ОП
-from типы import Стэк, ТаблицаИмен, КонстПул, Нуль
+from казино.операции.база import Оп
+from казино.константы import ПИТОН_ОПКОДЫ, КОДЫ_ДВОИЧН_ОП
+from казино.типы import Стэк, ТаблицаИмен, КонстПул, Нуль
 
 
 class Вернуть(Оп):

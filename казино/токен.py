@@ -3,11 +3,11 @@ import builtins as встроенные
 import functools as функинстр
 from dataclasses import dataclass as _классданных
 
-from константы import КОДЫ_ДВОИЧН_ОП as КОД_ДВОП
-from операции import питон
-from операции.база import Оп
-from структуры import ПромежутТаблицаИмен, ТаблицаКонст
-from типы import Список, Мб, Ничего, СтдТипы
+from казино.константы import КОДЫ_ДВОИЧН_ОП as КОД_ДВОП
+from казино.операции import питон
+from казино.операции.база import Оп
+from казино.структуры import ПромежутТаблицаИмен, ТаблицаКонст
+from казино.типы import Список, Мб, Ничего, СтдТипы
 
 классданных = функинстр.partial(_классданных, frozen=True, slots=True)()
 

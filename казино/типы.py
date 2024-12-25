@@ -1,5 +1,5 @@
 import typing as т
-from утилиты import Одиночка
+from казино.утилиты import Одиночка
 
 type ПроизвКортеж[Т] = tuple[Т, ...]
 type Список[T] = list[T]

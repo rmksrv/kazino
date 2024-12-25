@@ -1,8 +1,8 @@
 from functools import partial as частичн
 from dataclasses import dataclass as _классданных
 
-from типы import СтдТипы, ТаблицаИмен, КонстПул
-from утилиты import йота
+from казино.типы import СтдТипы, ТаблицаИмен, КонстПул
+from казино.утилиты import йота
 
 классданных = частичн(_классданных, frozen=True, slots=True)()
 

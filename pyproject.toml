@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "казино"
+version = "0.1.0"
+description = "Язык для настоящих диффичент"
+authors = ["Roman Kosarev <rmksrv@outlook.com>"]
+license = "MIT"
+readme = "ПРОЧТИМЕНЯ.md"
+
+[tool.poetry.scripts]
+"казино" = "казино.казино:главная"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

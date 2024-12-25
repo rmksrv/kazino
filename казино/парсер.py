@@ -2,13 +2,13 @@ import pathlib as путьбиб
 import re as ре
 from pprint import pprint as кпечать
 
-import токен as тк
-from операции import питон
-from операции.база import Оп
-from программа import Программа
-from структуры import ПромежутТаблицаИмен, ТаблицаКонст
-from типы import Список, Ничего, Мб
-from утилиты import Поток
+import казино.токен as тк
+from казино.операции import питон
+from казино.операции.база import Оп
+from казино.программа import Программа
+from казино.структуры import ПромежутТаблицаИмен, ТаблицаКонст
+from казино.типы import Список, Ничего, Мб
+from казино.утилиты import Поток
 
 КОММЕНТАРИЙ = "//"
 ОБЪЯВЛЕНИЕ_ПЕРЕМЕННОЙ_РЕГВЫР = r"^заряжаем *([а-яА-Яa-zA-Z]+)( *=)?(.*)?"
