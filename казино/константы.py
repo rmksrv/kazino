@@ -8,6 +8,10 @@
     "LOAD_CONST": 100,
     "LOAD_NAME": 101,
     "CALL": 171,
+    "POP_JUMP_IF_FALSE": 114,
+    "POP_JUMP_IF_TRUE": 115,
+    "POP_JUMP_IF_NOT_NONE": 128,
+    "POP_JUMP_IF_NONE": 129,
 }
 # МАГИЧЕСКОЕ_ЧИСЛО_ПИТОНА = 0xcb0d0d0a
 МАГИЧЕСКОЕ_ЧИСЛО_ПИТОНА = b"\xcb\r\r\n\x00\x00\x00\x00"
