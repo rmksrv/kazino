@@ -7,7 +7,7 @@ on: pull_request
 
 jobs:
 
-  тесты:
+  tests:
     strategy:
       fail-fast: false
       matrix:
