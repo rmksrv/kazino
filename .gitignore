@@ -1,3 +1,6 @@
 *__pycache__
 вокр/
 врем/
+.DS_Store
+out.pyc
+test.py

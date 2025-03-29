@@ -15,6 +15,12 @@ python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
 ipdb = "^0.13.13"
+pytest = "^8.3.5"
+
+[tool.pytest.ini_options]
+testpaths = "тесты"
+python_files = "*_тест.py"
+python_functions = "тест_*"
 
 [build-system]
 requires = ["poetry-core"]
