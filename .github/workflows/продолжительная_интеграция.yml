@@ -1,0 +1,32 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Продолжительная интеграция
+
+on: pull_request
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12"]
+        poetry-version: ["latest"]
+        os: ["ubuntu-latest"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Установить Питон
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Установить Поетри
+      uses: abatilo/actions-poetry@v4.0.0
+      with:
+        poetry-version: ${{ matrix.poetry-version }}
+    - name: Установить зависимости из dev группы
+      run: poetry install -G dev
+    - name: Запустить тесты
+      run: poetry run pytest -v
